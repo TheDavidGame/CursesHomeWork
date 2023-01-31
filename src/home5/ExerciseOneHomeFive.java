@@ -5,12 +5,11 @@ import java.util.Scanner;
 
 public class ExerciseOneHomeFive {
     public static void main(String[] args) {
-        int n, m, index = 0, min = 1000;
+        int n, m, min = 1000;
         Scanner input = new Scanner(System.in);
         m = input.nextInt();
         n = input.nextInt();
         int[][] arr = new int[n][m];
-        int[] out = new int[n];
 
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
@@ -24,13 +23,8 @@ public class ExerciseOneHomeFive {
                     min = arr[i][j];
                 }
             }
-            out[index++] = min;
+            System.out.print(min + " ");
             min = 1000;
         }
-
-        for (int i = 0; i < out.length; i++) {
-            System.out.print(out[i] + " ");
-        }
-
     }
 }
