@@ -47,45 +47,8 @@ public class TimeUnit {
 
     public void timeNowForm() {
         if (hours > 12) {
-            switch (hours) {
-                case 13:
-                    hours = 1;
-                    break;
-                case 14:
-                    hours = 2;
-                    break;
-                case 15:
-                    hours = 3;
-                    break;
-                case 16:
-                    hours = 4;
-                    break;
-                case 17:
-                    hours = 5;
-                    break;
-                case 18:
-                    hours = 6;
-                    break;
-                case 19:
-                    hours = 7;
-                    break;
-                case 20:
-                    hours = 8;
-                    break;
-                case 21:
-                    hours = 9;
-                    break;
-                case 22:
-                    hours = 10;
-                    break;
-                case 23:
-                    hours = 11;
-                    break;
-                case 24:
-                    hours = 12;
-                    break;
-            }
-            System.out.println(hours + ":" + minute + ":" + second + " pm");
+            int secHours = hours - 12;
+            System.out.println(secHours + ":" + minute + ":" + second + " pm");
         } else {
             System.out.println(hours + ":" + minute + ":" + second + " am");
         }
@@ -96,6 +59,14 @@ public class TimeUnit {
             this.hours += hours;
             this.minute += minute;
             this.second += second;
+            if(this.second > 60){
+                this.second %= 60;
+                this.minute++;
+            }
+            if(this.minute > 60){
+                this.minute %= 60;
+                this.hours++;
+            }
         } else {
             System.out.println("Error");
             throw new UnsupportedOperationException("Не правильный формат");

@@ -1,5 +1,7 @@
 package home6;
 
+
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class StudentService {
@@ -21,14 +23,15 @@ public class StudentService {
         return students[numberStudent];
     }
 
-    public void sortBySurname(Student[] students) {
-        String out = "";
-        for (int i = students.length - 1; i > 0; i--) {
-            int temp = students[i].getSurname().compareTo(students[i - 1].getSurname());
-            if (temp > 0) {
-                out = students[i - 1].getSurname();
-            }
+
+    public void sortStud(ArrayList<Student> list) {
+        list.sort((o1, o2)
+                -> o1.getSurname().compareTo(
+                o2.getSurname()));
+
+        for (int i = 0;i < list.size(); i++){
+            System.out.println(list.get(i).getSurname());
         }
-        System.out.println(out);
+
     }
 }

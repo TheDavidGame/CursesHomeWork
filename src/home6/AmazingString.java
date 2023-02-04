@@ -31,26 +31,34 @@ public class AmazingString {
     }
 
     public boolean substring(char[] arr) {
-        int found = 0;
-        for (char c : this.arr) {
-            for (char value : arr) {
-                if (value == c)
-                    found++;
+        for (int i = 0; i < this.arr.length - arr.length + 1; i++) {
+            int j = 0;
+            while (j < arr.length && this.arr[i + j] == arr[j]) {
+                j++;
+            }
+            if (j == arr.length) {
+                return true;
             }
         }
-        return found == arr.length;
+        return false;
     }
 
     public boolean substring(String str) {
-        char[] arr = str.toCharArray();
-        int found = 0;
-        for (char c : this.arr) {
-            for (char value : arr) {
-                if (value == c)
-                    found++;
+        char[] arr = new char[str.length()];
+        for(int i = 0; i < str.length(); i++){
+            arr[i] = str.charAt(i);
+        }
+
+        for (int i = 0; i < this.arr.length - arr.length + 1; i++) {
+            int j = 0;
+            while (j < arr.length && this.arr[i + j] == arr[j]) {
+                j++;
+            }
+            if (j == arr.length) {
+                return true;
             }
         }
-        return found == arr.length;
+        return false;
     }
 
     public void deleteSpace() {
@@ -64,15 +72,6 @@ public class AmazingString {
                     out[i] = arr[i + 1];
                 }
 
-            }
-            setArr(out);
-        }
-
-        if (arr[arr.length - 1] == ' ') {
-            char[] out = new char[arr.length - 1];
-
-            for (int i = 0; i < arr.length - 1; i++) {
-                out[i] = arr[i];
             }
             setArr(out);
         }

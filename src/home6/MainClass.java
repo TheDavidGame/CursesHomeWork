@@ -1,5 +1,6 @@
 package home6;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainClass {
@@ -31,14 +32,19 @@ public class MainClass {
 //        student3.addGrade(2);
 //        student3.setSurname("Smirnov");
 //
-//        Student[] students = new Student[]{student3, student1, student2 };
-//
 //        StudentService studentService = new StudentService();
+//
+//        ArrayList<Student> arrStudents = new ArrayList<Student>();
+//        arrStudents.add(student2);
+//        arrStudents.add(student1);
+//        arrStudents.add(student3);
+//
+//
 //        System.out.println(studentService.bestStudent(students).getSurname());
-//        studentService.sortBySurname(students);
+//        studentService.sortStud(arrStudents);
 
 //        ex4
-//        TimeUnit timeUnit = new TimeUnit(3, 45, 20);
+//        TimeUnit timeUnit = new TimeUnit(10, 50, 50);
 //        timeUnit.timeNow();
 //        timeUnit.timeNowForm();
 //
@@ -46,7 +52,9 @@ public class MainClass {
 //        timeUnit.timeNow();
 //        timeUnit.timeNowForm();
 //
-//        timeUnit.addTime(55,0,0);
+//        timeUnit.addTime(6,50,50);
+//        timeUnit.timeNowForm();
+//        timeUnit.timeNow();
 //        ex5
 //        DayOfWeek[] dayOfWeeks = new DayOfWeek[]{new DayOfWeek((byte)1, "Monday"),
 //                new DayOfWeek((byte)2, "Tuesday"), new DayOfWeek((byte)3, "Wednesday"),
@@ -58,7 +66,7 @@ public class MainClass {
 //        }
 
 //        ex6
-//        AmazingString amazingString = new AmazingString(" Vladislav ");
+//        AmazingString amazingString = new AmazingString(" Vladislav");
 //        System.out.println(amazingString.getIndex(3));
 //        System.out.println(amazingString.getLength());
 //        amazingString.stringOut();
