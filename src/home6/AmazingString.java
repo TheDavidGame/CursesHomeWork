@@ -77,6 +77,8 @@ public class AmazingString {
         }
     }
 
+
+
     public void reverseArr() {
         for (int i = 0; i < (arr.length / 2); i++) {
             char sec = arr[i];
