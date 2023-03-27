@@ -23,7 +23,7 @@ public class MainClass {
 
 //        ex3
 //        long notEmptyStr = Stream.of("abc", "", "", "def", "qqq")
-//                .filter(x -> x != "")
+//                .filter(x -> !x.equals(""))
 //                .count();
 //        System.out.println(notEmptyStr);
 
@@ -35,15 +35,21 @@ public class MainClass {
 //        System.out.println(reversed);
 
 //          ex5
-//        List<String> result = List.of("abc", "def", "qqq").stream()
-//                .map(x -> x.toUpperCase())
-//                .collect(Collectors.toList());
+//        String result = List.of("abc", "def", "qqq").stream()
+//                .map(String::toUpperCase)
+//                .collect(Collectors.joining(", "));
 //        System.out.println(result);
 
 //        ex6
-//        Set<Set<Integer>> set = new HashSet<>();
-//        set.stream()
-//                .collect(Collectors.toSet());
-//        System.out.println(set instanceof Set);
+        Set<Integer> set1 = new HashSet<>(Arrays.asList(1, 2, 3));
+        Set<Integer> set2 = new HashSet<>(Arrays.asList(3, 4, 5));
+        Set<Integer> set3 = new HashSet<>(Arrays.asList(5, 6, 7));
+        Set<Set<Integer>> set = new HashSet<>();
+        set.add(set1);
+        set.add(set2);
+        set.add(set3);
+        Set<Integer> resultSet = set.stream()
+                .flatMap(Set::stream)
+                .collect(Collectors.toSet());
     }
 }

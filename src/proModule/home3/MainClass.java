@@ -32,10 +32,10 @@ public class MainClass {
 //        }
 
 //        ex4
-        List<Class<?>> interfaces = InterfaceSearch(D.class);
-        for (Class<?> clazz : interfaces) {
-            System.out.println(clazz.getName());
-        }
+//        List<Class<?>> interfaces = InterfaceSearch(C.class);
+//        for (Class<?> clazz : interfaces) {
+//            System.out.println(clazz.getName());
+//        }
     }
 
     public static List<Class<?>> InterfaceSearch(Class<?> clazz) {
@@ -53,7 +53,9 @@ public class MainClass {
     interface B {
     }
 
-    class C implements B {
+    interface E extends A {}
+
+    class C implements E {
     }
 
     class D extends C implements A {
